@@ -1,7 +1,8 @@
 .*.swp
-bin/
-ipch/
-*.opensdf
-*.sdf
-*.user
-*.suo
+
+/bin/
+/ipch/
+/*.opensdf
+/*.sdf
+/*.vcxproj.user
+/*.suo
