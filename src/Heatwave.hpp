@@ -3,6 +3,10 @@
 
 #include <cstdint>
 
+#include "hw_config.hpp"
+
+#include "hw_assert.hpp"
+
 namespace hw {
 	// Standard sized types
 	typedef int8_t s8;
