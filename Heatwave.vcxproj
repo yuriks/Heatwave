@@ -84,6 +84,7 @@
     <ClInclude Include="src\Heatwave.hpp" />
     <ClInclude Include="src\hw_assert.hpp" />
     <ClInclude Include="src\hw_config.hpp" />
+    <ClInclude Include="src\job_system\JobManager.hpp" />
     <ClInclude Include="src\memory\LinearAllocator.hpp" />
     <ClInclude Include="src\obj_model\GameObject.hpp" />
     <ClInclude Include="src\obj_model\GameObjectFunctions.hpp" />
@@ -93,6 +94,7 @@
   <ItemGroup>
     <ClCompile Include="src\hw_assert.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\job_system\JobManager.cpp" />
     <ClCompile Include="src\obj_model\ObjectPool.cpp" />
     <ClCompile Include="src\obj_model\TypeRegistry.cpp" />
   </ItemGroup>
