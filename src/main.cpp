@@ -3,6 +3,7 @@
 #include "hw_assert.hpp"
 
 #include "memory/LinearAllocator.hpp"
+#include "memory/PoolAllocator.hpp"
 #include "obj_model/GameObject.hpp"
 #include "obj_model/GameObjectFunctions.hpp"
 #include "obj_model/ObjectPool.hpp"
