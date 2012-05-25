@@ -6,6 +6,8 @@
 namespace hw {
 namespace obj {
 
+class ObjectPool;
+
 typedef u16 Type;
 
 // GameComponent handle
@@ -13,27 +15,19 @@ struct Handle {
 	u16 pool_index;
 	u16 generation;
 #ifdef DBG_CHECKED_HANDLES
-	Type type;
+	ObjectPool* pool;
 #endif
 };
 
 struct GameComponent {
 	u16 roster_index;
 	u16 generation;
+	Type type;
 };
 
 struct GameObject {
 	Handle components;
 };
-
-template<typename T>
-T* allocate()
-{
-
-}
-
-template<typename T>
-T* resolveHandle(Handle h);
 
 }
 }

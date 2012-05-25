@@ -30,12 +30,27 @@
     <ClInclude Include="src\obj_model\TypeRegistry.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\memory\LinearAllocator.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\obj_model\GameObjectFunctions.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\obj_model\ObjectPool.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\hw_assert.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\obj_model\TypeRegistry.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\obj_model\ObjectPool.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -7,38 +7,33 @@ namespace {
 
 static const int MAX_COMPONENT_TYPES = 256;
 
-struct TypeInfo {
-	const char* name;
-	Type base_type;
-};
-
 TypeInfo type_registry[MAX_COMPONENT_TYPES];
 int num_types = 0;
 
 } // namespace
 
-Type registerType(const char* name, Type base_type)
+// Warning: This must not depend on any non-constant initialized type, since
+// it needs to be used to initialize other variables.
+Type registerType(const TypeInfo& info)
 {
-	HW_ASSERT(num_types >= MAX_COMPONENT_TYPES, "Maximium number of GameComponent types exceeded. Increase MAX_COMPONENT_TYPES.");
+	HW_ASSERT(num_types < MAX_COMPONENT_TYPES, "Maximium number of GameComponent types exceeded. Increase MAX_COMPONENT_TYPES.");
+	HW_ASSERT(info.base_type < num_types, "Invalid base_type specified.");
 
-	type_registry[num_types].name = name;
-	type_registry[num_types].base_type = base_type;
+	type_registry[num_types] = info;
 
 	return num_types++;
 }
 
-Type getTypeBase(Type type)
+const TypeInfo& getTypeInfo(Type type)
 {
 	HW_DBG_ASSERT(type < num_types);
 
-	return type_registry[type].base_type;
+	return type_registry[type];
 }
 
-const char* getTypeName(Type type)
+Type getTypeBase(Type type)
 {
-	HW_DBG_ASSERT(type < num_types);
-
-	return type_registry[type].name;
+	return getTypeInfo(type).base_type;
 }
 
 bool typeImplements(Type type, Type base)

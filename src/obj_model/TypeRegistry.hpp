@@ -7,11 +7,20 @@
 namespace hw {
 namespace obj {
 
+class ObjectPool;
+
+struct TypeInfo
+{
+	const char* name;
+	ObjectPool* pool;
+	Type base_type;
+};
+
+
 static const Type NO_TYPE = 0xFFFF;
 
-Type registerType(const char* name, Type base_type = NO_TYPE);
-Type getTypeBase(Type type);
-const char* getTypeName(Type type);
+Type registerType(const TypeInfo& info);
+const TypeInfo& getTypeInfo(Type type);
 bool typeImplements(Type type, Type base);
 
 }
