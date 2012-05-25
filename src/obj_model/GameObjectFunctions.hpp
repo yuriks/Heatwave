@@ -10,8 +10,26 @@ namespace hw {
 namespace obj {
 
 template<typename T>
-T* allocate() {
+Handle allocate()
+{
+	ObjectPool* pool = getTypePool(T::type);
+	return allocate(pool);
+}
 
+template<typename T>
+Handle allocate(ObjectPool* pool)
+{
+	Handle h;
+	GameComponent* new_component = pool->allocate(h);
+
+	new_component->type = T::type;
+
+	return h;
+}
+
+inline bool isHandleNull(const Handle& h)
+{
+	return h.pool_index == 0xFFFF;
 }
 
 template<typename T>

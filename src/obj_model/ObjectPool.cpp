@@ -23,14 +23,21 @@ ObjectPool::ObjectPool(size_t instance_size, u16 pool_size, u16* roster_memory, 
 	}
 }
 
-GameComponent* ObjectPool::allocate()
+GameComponent* ObjectPool::allocate(Handle& h)
 {
 	HW_ASSERT(partition < pool_size, "Component pool full.");
 
-	GameComponent* new_component = index(roster[partition]);
+	int pool_index = roster[partition];
+	GameComponent* new_component = index(pool_index);
 	new_component->roster_index = partition;
 
 	partition += 1;
+
+	h.generation = new_component->generation;
+	h.pool_index = pool_index;
+#ifdef DBG_CHECKED_HANDLES
+	h.pool = this;
+#endif
 
 	return new_component;
 }

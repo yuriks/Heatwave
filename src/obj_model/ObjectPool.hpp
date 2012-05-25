@@ -15,7 +15,7 @@ public:
 	// pool_memory should be at least instance_size*pool_size bytes
 	ObjectPool(size_t instance_size, u16 pool_size, u16* roster_memory, u8* pool_memory);
 
-	GameComponent* allocate();
+	GameComponent* allocate(Handle& h);
 	void free(const Handle& h);
 
 	inline GameComponent* index(u16 i) const {
