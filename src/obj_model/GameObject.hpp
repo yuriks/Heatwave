@@ -6,7 +6,7 @@
 namespace hw {
 namespace obj {
 
-#ifdef DBG_CHECKED_HANDLES
+#if DBG_CHECKED_HANDLES
 class ObjectPool;
 #endif
 
@@ -16,7 +16,7 @@ typedef u16 Type;
 struct Handle {
 	u16 pool_index;
 	u16 generation;
-#ifdef DBG_CHECKED_HANDLES
+#if DBG_CHECKED_HANDLES
 	ObjectPool* pool;
 #endif
 };

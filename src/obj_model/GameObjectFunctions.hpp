@@ -41,7 +41,7 @@ bool isHandleValid(const Handle& h)
 
 inline bool isHandleValid(const Handle& h, const ObjectPool* pool)
 {
-#ifdef DBG_CHECKED_HANDLES
+#if DBG_CHECKED_HANDLES
 	if (h.pool != pool)
 		return false;
 #endif

@@ -19,7 +19,7 @@ public:
 
 	u8* allocate(size_t size) {
 		u8* p = memory_cur;
-#ifdef DBG_CHECKED_ALLOCATORS
+#if DBG_CHECKED_ALLOCATORS
 		HW_DBG_ASSERT(p < memory_start + max_size);
 #endif
 		memory_cur += size;

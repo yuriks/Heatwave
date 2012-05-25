@@ -35,7 +35,7 @@ GameComponent* ObjectPool::allocate(Handle& h)
 
 	h.generation = new_component->generation;
 	h.pool_index = pool_index;
-#ifdef DBG_CHECKED_HANDLES
+#if DBG_CHECKED_HANDLES
 	h.pool = this;
 #endif
 

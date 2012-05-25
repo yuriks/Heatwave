@@ -5,7 +5,7 @@ void hw_assert(const char* file, int line, const char* message);
 
 #define HW_ASSERT(cond, message) ((cond) ? (void)0 : hw_assert(__FILE__, __LINE__, message))
 
-#ifdef DBG_ENABLE_DBG_ASSERT
+#if DBG_ENABLE_DBG_ASSERT
 #define HW_DBG_ASSERT(cond) ((cond) ? (void)0 : hw_assert(__FILE__, __LINE__, #cond))
 #else
 #define HW_DBG_ASSERT(cond)
