@@ -4,7 +4,7 @@ solution "Heatwave"
 	project "Heatwave"
 		kind "ConsoleApp"
 		language "C++"
-		files { "../src/**.h", "../src/**.cpp" }
+		files { "../src/**.cpp", "../src/**.hpp" }
 		includedirs "../src"
 		debugdir ".."
 		flags { "Symbols", "EnableSSE2", "FatalWarnings", "FloatFast", "NoExceptions", "NoRTTI", "Unicode" }
